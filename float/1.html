@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>List tree</title>
+		<link charset="utf-8">
+
+		<style type="text/css">
+			li {
+				list-style: none;
+			}
+			.list-img {
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				vertical-align: top;
+				border: 1px solid black;
+				background-color: red;
+			}
+			.list-img.opened {
+				background-color: green;
+			}
+			.list-text {
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<span class="list-img opened"></span>
+				<span class="list-text">Chapter 1<br>
+					(in 2 lines)
+				</span>
+				<ul>
+					<li>
+						<span class="list-img"></span><span class="list-text">Chapter 1.1</span>
+					</li>
+					<li>
+						<span class="list-img"></span><span class="list-text">Chapter 1.2</span>
+					</li>
+				</ul>
+			</li>
+			<li><span class="list-img"></span>
+			<span class="list-text">Chapter 2</span></li>
+		</ul>
+	</body>
+</html>

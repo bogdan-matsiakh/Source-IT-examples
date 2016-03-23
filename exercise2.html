@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Example</title>
+		<link charset="utf-8">
+		<style type="text/css">
+		.elem {
+			border: 1px solid;
+			width: 100px;
+			height: 100px;
+		}
+		</style>
+		<script>
+		var myFunction;
+
+		function say() {
+			var store = 3;
+		    var count = 2;
+		    console.log('say');
+		    myFunction = function() {
+		        console.log('myFunction');
+		        console.log(++store);       
+		    }
+		    function myFunction2() {
+		    	var store = 10;
+		    	console.log(store++);
+		    }
+		    myFunction2();
+		}
+		say();
+
+		function count() {
+			var counter = 0;
+			return function() {
+				return counter++;
+			};
+		}
+		var print = (function() {
+			var line = 'Hello';
+			return function(str) {
+				return line += str;
+			};
+		})();
+
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div class="elem"></div>
+			<div class="elem"></div>
+			<div class="elem"></div>
+			<div class="elem"></div>
+			<button>Add one more element</button>
+		</div>  
+	</body>
+</html>

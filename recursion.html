@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Example</title>
+		<link charset="utf-8">
+		<style type="text/css">
+		.elem {
+			border: 1px solid;
+			width: 100px;
+			height: 100px;
+		}
+		</style>
+
+	</head>
+	<body>
+		<div id="container">
+			<div class="elem"></div>
+			<div class="elem"></div>
+			<div class="elem"></div>
+			<div class="elem"></div>
+			<button>Add one more element</button>
+		</div>
+		<div id="container">
+			<div class="elem"></div>
+			<div class="elem"></div>
+			<div class="elem"></div>
+			<div class="elem"></div>
+			<button>Add one more element</button>
+		</div>
+		<script>
+			var elements = [];
+			
+			
+			function getElementsDIV(elems) {
+				for(var i = 0; i < elems.length; i++) {
+					if(elems[i].tagName === 'DIV') {
+						elements.push(elems[i]);
+					}
+					if (elems[i].childNodes.length !== 0) {
+						getElementsDIV(elems[i].childNodes);
+					}
+				}
+			}
+			getElementsDIV(document.body.childNodes);
+
+		</script>  
+	</body>
+</html>
