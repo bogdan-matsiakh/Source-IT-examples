@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cookie</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+		window.onload = function () {
+			var btn = document.getElementById('set-cookie');
+			var input = document.getElementById('input-cookie');
+			var cookieValue = document.getElementById('cookie-value');
+
+			btn.addEventListener('click', function() {
+				var value = input.value;
+				document.cookie = 'text=' + value;
+			});
+			cookieValue.innerHTML = document.cookie;
+		};
+		</script>
+
+	</head>
+	<body>
+		
+		<div>Cookies:</div><div id="cookie-value"></div>
+		<input type="text" id="input-cookie" />
+		<button id="set-cookie">Set cookie</button>
+	</body>
+</html>
