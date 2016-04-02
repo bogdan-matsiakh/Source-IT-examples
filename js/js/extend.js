@@ -13,10 +13,15 @@ Bicycle.prototype.ride = function() {
 }
 
 function Bike() {
-  Bicycle.apply(this, arguments);
+  Bike.superclass.constructor.apply(this, arguments);
 
   this.engine = 'dr-dr';
 }
 
-Bike.prototype = Object.create(Bicycle.prototype);
-Bike.prototype.constructor = Bike;
+extend(Bike, Bicycle);
+
+function extend(Child, Parent) {
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.constructor = Child;
+    Child.superclass = Parent.prototype;
+}
